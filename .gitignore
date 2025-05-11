@@ -1,0 +1,89 @@
+###############################
+# SISTEMA OPERATIVO
+###############################
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+###############################
+# VISUAL STUDIO / IDEs
+###############################
+
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.vssscc
+*.vsidx
+*.dbtcache*
+*.cache
+
+###############################
+# DOTNET / C#
+###############################
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/obj/
+*.dll
+*.exe
+*.pdb
+*.mdb
+
+# Others
+*.log
+*.tmp
+*.bak
+
+# User-specific
+*.csproj.user
+*.vbproj.user
+
+# Paket dependency manager
+.paket/
+paket-files/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
+Package.lock.json
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+###############################
+# ENTORNO / OTROS
+###############################
+
+*.sqlite
+*.db
+*.db-shm
+*.db-wal
+
+###############################
+# DOCUMENTOS / PERSONAL
+###############################
+
+*.docx
+*.xlsx
+*.pptx
+*.pdf
+
+# Settings Database:
+WebAPI/appsettings.Development.json
+WebAPI/appsettings.Production.json
+
+

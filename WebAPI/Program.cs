@@ -1,6 +1,7 @@
 using Application;
 using Persistence;
 using Serilog;
+using WebAPI.Helpers;
 
 
 Log.Logger = new LoggerConfiguration().MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
@@ -28,6 +29,7 @@ builder.Host.UseSerilog();
 
 builder.Services.AddApplicationLayer();
 builder.Services.AddInfrastructureLayer(configuration);
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

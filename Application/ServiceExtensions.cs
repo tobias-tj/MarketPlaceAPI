@@ -12,6 +12,7 @@ namespace Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddSingleton<IUserService, UserService>();
+            services.AddSingleton<IAuthService, AuthService>();
         }
     }
 }

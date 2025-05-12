@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Repositories;
+using WebAPI.Helpers;
 
 namespace Persistence
 {
@@ -12,6 +13,8 @@ namespace Persistence
             services.AddTransient<DbConnection>();
 
             services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<JwtHelper>();
+            services.AddSingleton<IAuthRepository, AuthRepository>();
         }
     }
 }

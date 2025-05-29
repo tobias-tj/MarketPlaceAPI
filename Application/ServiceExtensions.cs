@@ -13,6 +13,7 @@ namespace Application
 
             services.AddSingleton<IUserService, UserService>();
             services.AddSingleton<IAuthService, AuthService>();
+            services.AddSingleton<IEmailService, EmailService>();
         }
     }
 }

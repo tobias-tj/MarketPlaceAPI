@@ -39,5 +39,21 @@ namespace WebAPI.Controllers.v1
 
         }
 
+        [HttpGet("isEmailExist")]
+        [SwaggerOperation(
+            Summary = "Validar si el email existe",
+            Description = "Validar si el emails esta asociado a una cuenta")]
+        public async Task<IActionResult> GetEmailExist([FromQuery][Description("Email del usuario")] string email)
+        {
+            var resultado = await _service.GetEmailExist(email);
+
+            return Ok(new Response<IsEmailExistResponse>
+            {
+                Success = true,
+                Data = new IsEmailExistResponse { IsExist = resultado }
+            }
+            );
+        }
+
     }
 }

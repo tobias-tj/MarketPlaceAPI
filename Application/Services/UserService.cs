@@ -17,5 +17,10 @@ namespace Application.Services
         {
             return await _repository.GetDetailsUser(userId);
         }
+
+        public async Task<bool> GetEmailExist(string email)
+        {
+            return await _repository.GetEmailExist(email);
+        }
     }
 }

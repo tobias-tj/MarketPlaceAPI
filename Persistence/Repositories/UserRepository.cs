@@ -55,5 +55,34 @@ namespace Persistence.Repositories
                 throw;
             }
         }
+
+        public async Task<bool> GetEmailExist(string email)
+        {
+            _logger.LogInformation("Inicio de proceso para validar si email existe");
+            string query = @"SELECT EXISTS (
+                        SELECT 1
+                        FROM users
+                        WHERE LOWER(email) = LOWER(@email)
+                    ) AS email_exists;";
+
+            try
+            {
+                using (var connection = _dbConnection.CreatePostgresConnection())
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@email", email);
+
+                    var resultado = await connection.QueryFirstOrDefaultAsync<bool>(query, parametros);
+
+                    _logger.LogInformation("Fin del proceso para validar email");
+                    return resultado;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al validar el email");
+                throw;
+            }
+        }
     }
 }

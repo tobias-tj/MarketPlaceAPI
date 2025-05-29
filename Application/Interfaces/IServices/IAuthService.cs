@@ -1,4 +1,5 @@
 ﻿using Domain.DTOs;
+using Domain.Request;
 
 namespace Application.Interfaces.IServices
 {
@@ -6,5 +7,8 @@ namespace Application.Interfaces.IServices
     {
         Task<AuthResponseDTO> Register(RegisterDTO registerDTO);
         Task<AuthResponseDTO> Login(LoginDTO loginDTO);
+        Task GenerateAndSendResetPin(SendResetPassword sendResetPassword);
+        Task ResetPassword(ResetPasswordDTO resetPasswordDTO);
+        Task<bool> ValidPin(ValidPin request);
     }
 }

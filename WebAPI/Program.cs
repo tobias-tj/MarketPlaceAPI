@@ -1,4 +1,5 @@
 using Application;
+using Application.Helpers;
 using Persistence;
 using Serilog;
 using WebAPI.Helpers;
@@ -30,6 +31,7 @@ builder.Host.UseSerilog();
 builder.Services.AddApplicationLayer();
 builder.Services.AddInfrastructureLayer(configuration);
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+builder.Services.Configure<MailtrapSetting>(builder.Configuration.GetSection("Mailtrap"));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
